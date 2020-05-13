@@ -20,8 +20,9 @@ void Bishop::moves(){
        int row = this->getCurrentBox()->rowl;
        int col = this->getCurrentBox()->colL;
        QString team = this->getSide();
-       //For upper Left
-
+       
+    
+        //for upper left move
         for(int i = row-1,j = col-1; i >= 0 && j >=0; i--,j--) {
           if(game->sq[i][j]->getChessPieceColor() == team ) {
               break;
@@ -36,7 +37,7 @@ void Bishop::moves(){
           }
        }
 
-        //For upper right
+        //For upper right move
 
          for(int i = row-1,j = col+1; i >= 0 && j <= 7; i--,j++) {
            if(game->sq[i][j]->getChessPieceColor() == team ) {
@@ -52,7 +53,7 @@ void Bishop::moves(){
            }
         }
 
-         //For downward right
+         //For downward right move
 
           for(int i = row+1,j = col+1; i <= 7 && j <= 7; i++,j++) {
             if(game->sq[i][j]->getChessPieceColor() == team ) {
@@ -68,7 +69,7 @@ void Bishop::moves(){
             }
          }
 
-          //For downward left
+          //For downward left move
 
            for(int i = row+1,j = col-1; i <= 7 && j >= 0; i++,j--) {
              if(game->sq[i][j]->getChessPieceColor() == team ) {
