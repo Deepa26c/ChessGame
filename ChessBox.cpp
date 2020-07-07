@@ -134,6 +134,7 @@ void ChessBox::checkForCheck()
                 else{
                     bList[j]->resetOriginalColor();
                     pList[i]->getCurrentBox()->resetOriginalColor();
+                    game->gameOver();
                 }
                 c++;
 

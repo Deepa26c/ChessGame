@@ -20,7 +20,6 @@ void Knight::moves(){
     int i ,j;
     QString team  = this->getSide();
 
-    //move in L to up left
     i = row - 2;
     j = col - 1;
     if(i >=0 && j>=0 && (game->sq[i][j]->getChessPieceColor() != team) ) {
@@ -30,7 +29,7 @@ void Knight::moves(){
         else
             location.last()->setColor(Qt::darkGreen);
     }
-    //move in L to right
+
     i = row - 2;
     j = col + 1;
     if(i >=0 && j<=7 && (game->sq[i][j]->getChessPieceColor() != team) ) {
@@ -40,8 +39,7 @@ void Knight::moves(){
         else
             location.last()->setColor(Qt::darkGreen);
     }
-    
-    //move down to left in L shape
+
     i = row + 2;
     j = col - 1;
     if(i <= 7 && j>=0 && (game->sq[i][j]->getChessPieceColor() != team) ) {
@@ -51,8 +49,7 @@ void Knight::moves(){
         else
             location.last()->setColor(Qt::darkGreen);
     }
-    
-    //move down to right in L shape
+
     i = row + 2;
     j = col + 1;
     if(i <=7 && j<=7 && (game->sq[i][j]->getChessPieceColor() != team) ) {
@@ -63,7 +60,6 @@ void Knight::moves(){
             location.last()->setColor(Qt::darkGreen);
     }
 
-    //move to left to up in L shape
     i = row - 1;
     j = col - 2;
     if(i >=0 && j>=0 && (game->sq[i][j]->getChessPieceColor() != team) ) {
@@ -73,8 +69,7 @@ void Knight::moves(){
         else
             location.last()->setColor(Qt::darkGreen);
     }
-    
-    //move to left to down in L shape
+
     i = row + 1;
     j = col - 2;
     if(i <=7 && j>=0 && (game->sq[i][j]->getChessPieceColor() != team) ) {
@@ -84,8 +79,7 @@ void Knight::moves(){
         else
             location.last()->setColor(Qt::darkGreen);
     }
-    
-    //move right side up in L shape
+
     i = row - 1;
     j = col + 2;
     if(i >=0 && j<=7 && (game->sq[i][j]->getChessPieceColor() != team) ) {
@@ -95,8 +89,7 @@ void Knight::moves(){
         else
             location.last()->setColor(Qt::darkGreen);
     }
-    
-    //move right side up in L shape
+
     i = row + 1;
     j = col +  2;
     if(i <=7 && j<=7 && (game->sq[i][j]->getChessPieceColor() != team) ) {
