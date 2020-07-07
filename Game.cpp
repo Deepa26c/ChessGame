@@ -82,7 +82,7 @@ void Game::placeDeadPlace(ChessPiece *piece)
                 if(g){
 
                     check->setPlainText("Black Won");
-              //      gameOver();
+                    gameOver();
                 }
         displayWhite();
     }
@@ -93,7 +93,7 @@ void Game::placeDeadPlace(ChessPiece *piece)
                 if(g){
 
                     check->setPlainText("White Won");
-                //    gameOver();
+                    gameOver();
                 }
         displayBlack();
     }
@@ -173,7 +173,7 @@ void Game::drawHolder(int x, int y, QColor color)
 
 void Game::displayMainMenu()
 {
-    QGraphicsPixmapItem *p = new QGraphicsPixmapItem();
+  /*  QGraphicsPixmapItem *p = new QGraphicsPixmapItem();
         p->setPixmap(QPixmap(":/Images/kingw.png"));
         p->setPos(420,170);
         addToScene(p);
@@ -183,9 +183,9 @@ void Game::displayMainMenu()
         p1->setPixmap(QPixmap(":/Images/kingb.png"));
         p1->setPos(920,170);
         addToScene(p1);
-        listGrap.append(p1);
+        listGrap.append(p1);*/
 
-    QGraphicsTextItem *titleText = new QGraphicsTextItem("Chess Pro");
+    QGraphicsTextItem *titleText = new QGraphicsTextItem("Chess Game");
     QFont titleFont("arial" , 50);
     titleText->setFont( titleFont);
     int xPos = width()/2 - titleText->boundingRect().width()/2;
@@ -194,9 +194,9 @@ void Game::displayMainMenu()
     addToScene(titleText);
     listGrap.append(titleText);
 
-    Button * playButton = new Button("Play");
+    Button * playButton = new Button("Play Game");
     int pxPos = width()/2 - playButton->boundingRect().width()/2;
-    int pyPos = 300;
+    int pyPos = 500;
     playButton->setPos(pxPos,pyPos);
     connect(playButton,SIGNAL(clicked()) , this , SLOT(start()));
     addToScene(playButton);
@@ -212,6 +212,12 @@ void Game::displayMainMenu()
     listGrap.append(quitButton);
 }
 
+void Game::gameOver()
+{
+    setTurn("White");
+    alivePiece.clear();
+    chess->reset();
+}
 void Game::removeAll(){
     QList<QGraphicsItem*> itemsList = gameScene->items();
     for(size_t i = 0, n = itemsList.size();i<n;i++) {
